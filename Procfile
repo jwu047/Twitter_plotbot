@@ -1,0 +1,1 @@
+worker: python jw_07_plotbot.py
