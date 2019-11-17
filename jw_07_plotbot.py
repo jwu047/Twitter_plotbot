@@ -6,9 +6,20 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import tweepy
 import time
+import os
 
+"""local
 from myconfig import consumer_key, consumer_secret, access_token, access_token_secret
+"""
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+# Heroku
+from boto.s3.connection import S3Connection
+consumer_key = S3Connection(os.environ['consumer_key'])
+consumer_secret = S3Connection(os.environ['consumer_secret'])
+access_token = S3Connection(os.environ['access_token'])
+access_token_secret = S3Connection(os.environ['access_token_secret'])
+
+
 
 # Setup tweepy and vader
 analyzer = SentimentIntensityAnalyzer()
