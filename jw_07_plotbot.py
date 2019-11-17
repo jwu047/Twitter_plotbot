@@ -107,7 +107,9 @@ def AnalyzeTweets():
             plt.savefig(file_path, bbox_extra_artists=(lgnd, ), bbox_inches='tight')
             print(f"Plot complete for {target_account}!")
             api.update_with_media(file_path, f"New Tweet Analysis: {target_account} (Thx @{username}!)")
+            time.sleep(15)
             print(f"Updated status for {target_account}!")
+            
 
 while(True):
     AnalyzeTweets()
